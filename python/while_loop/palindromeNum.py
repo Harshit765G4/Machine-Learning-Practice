@@ -11,3 +11,5 @@ if digit==rev:
     print(f"The number {digit} is a palindrome.")
 else:
     print(f"The number {digit} is not a palindrome.")
+
+    
