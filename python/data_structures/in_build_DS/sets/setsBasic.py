@@ -4,3 +4,12 @@
 
 s = {1, 2, 3, 4, 4, 4, 5, 5}  #Creating a set with elements 1, 2, 3, 4, and 5
 print(f"Set s: {s}")
+
+
+a = {1, 2, 3, 4, 5}  #Creating another set with elements 1, 2, 3, 4, and 5
+
+for i in a:
+    print(i)  #Iterating through the set and printing each element
+
+
+    
