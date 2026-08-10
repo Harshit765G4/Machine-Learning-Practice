@@ -110,27 +110,31 @@ class Animal:
     def show(self):
         print(f"Age of our Lion is {self.age}")
 
-
-class MyClass:
     def instance_method(self):
         print("This is an instance method")
 
 
 # 2. classmethod - This method works with the class itself it will not target the instance(object). we have to use @classmethod decorator for creating the class method and it takes cls as their first parameter.
 
-class MyClass1:
     @classmethod
     def hello(cls):
         print("How are you Mr. Lion")
 
-class MyClass2:
     @classmethod
     def class_method(cls):
         print("this is a class method")
 
 # 3. Static Method - this method doesn't access class or instace directly it also uses a decortor @staticmethod it just acts like a regular function placed inside a class.
 
-class MyClass:
     @staticmethod
     def static_method():
         print("this is a static method.")
+
+
+obj = Animal(12) 
+
+obj.show() # instance method
+
+obj.class_method() # class method
+
+obj.static_method() # static method
