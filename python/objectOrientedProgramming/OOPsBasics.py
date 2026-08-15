@@ -590,3 +590,45 @@ class Cat(Animal):
 obj = Dog()
 
 obj.make_sound()
+
+
+# ----------------------------------
+
+# Dunder Methods
+
+# Dunder methods are special methods in python that start and end with double underscores like __init__, __str__, __add__, etc. 
+
+# they automatically get called when we perform certain actions on an object 
+
+# They helps Us:
+#  Customize behaviour of our class
+# Make your class objets behave like build in data types(like strings, lists, etc.)
+# Now there are various dunder methods 
+    
+class Person:
+    def __init__(self, name, age):
+        self.name = name 
+        self.age = age
+
+    def __str__(self):
+        return "Hello How are you"
+
+    # def __add__(self, other):                                                              # Sum of ages of 2 objects
+    #     return f"sum of ages of 2 objects are {self.age + other.age}"
+
+    def __add__(self, other):                               # Sum of ages of 3 objects
+        sum = 0
+        for i in other:
+            sum = sum + i.age
+        return f"Your sum of ages are {self.age + sum}"
+
+obj = Person("Ravi", 16)
+obj2 = Person("Amit", 19)
+obj3 = Person("Sumit", 21)
+print(obj.name)
+
+print(obj)
+
+# print(obj + obj2)                                # Sum of ages of 2 objects
+
+print(obj + (obj2,obj3))
