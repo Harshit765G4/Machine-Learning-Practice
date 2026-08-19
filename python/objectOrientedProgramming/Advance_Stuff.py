@@ -191,12 +191,22 @@ import math
 print(math.sqrt(16))
 
 
-import self_maths_module
+from modelss.model import self_maths_module
 print("sum of your numbers is:", self_maths_module.addFromModule(4,6))
 print("product of your number is:", self_maths_module.multiplicationFromModule(4,5))
 
 # or we can also import the whole function like this
-from self_maths_module import addFromModule                         # function imported from module
+from modelss.model.self_maths_module import addFromModule                         # function imported from module
 print("sum of your numbers is:", self_maths_module.addFromModule(11,54))
 
 
+# Packages - a package is a folder that contains one or more modules(python files). it may also contain sub-packages.
+# and you just have to use from and import keywords to use these things. you understood how these things work.
+# There are third party packages as well like numpy, pandas, matplotlib etc. and we have to install all of these.
+
+
+from modelss.model import hello
+print(hello.hello())
+
+from modelss.model.hello import hello
+print(hello())
