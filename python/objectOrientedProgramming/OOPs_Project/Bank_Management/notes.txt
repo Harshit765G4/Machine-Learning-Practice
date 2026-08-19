@@ -1,0 +1,8 @@
+features of bank management project:- 
+
+bank account for users
+deposit money
+withdraw money
+details
+update details
+delete
