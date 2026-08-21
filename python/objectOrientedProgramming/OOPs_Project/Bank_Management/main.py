@@ -109,7 +109,7 @@ class Bank:
 
         userdata = [i for i in Bank.data if i['accountNo.'] == accNum and i['pin'] == accPin]
 
-        if userdata == False:
+        if not userdata:
             print("Sorry No Data Found")
         else:
             print("you cannot change your age, account number,balance")
@@ -143,7 +143,38 @@ class Bank:
 
             Bank.__update()
             print("Details Updated Sucessfully.")
-            
+
+
+    def accdelete(self):
+        accNum = input("Please Enter your Account Number: ")
+        accPin = int(input("Please Enter your PIN: "))
+
+        userdata = [
+            i for i in Bank.data
+            if i['accountNo.'] == accNum and i['pin'] == accPin
+        ]
+
+        if not userdata:
+            print("Sorry No Data Found")
+        else:
+            check = input(
+                "Press Y if you want to delete the account or Press N if not: "
+            )
+
+            if check.lower() == 'n':
+                print("Request Bypassed")
+
+            elif check.lower() == 'y':
+                index = Bank.data.index(userdata[0])
+                Bank.data.pop(index)
+
+                Bank.__update()
+
+                print("Account Deleted Successfully.")
+
+            else:
+                print("Invalid Input.")
+
 
 user = Bank()
 
@@ -170,3 +201,6 @@ if check == 4:
 
 if check == 5:
     user.updatedetails()
+
+if check == 6:
+    user.accdelete()
