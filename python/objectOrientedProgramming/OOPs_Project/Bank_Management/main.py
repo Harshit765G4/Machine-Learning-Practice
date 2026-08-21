@@ -90,6 +90,19 @@ class Bank:
                 Bank.__update()
                 print("your amount is withdrawn successfully.")
 
+    def showdetails(self):
+        accNum = input("Please Enter your Account Number: ")
+        accPin = int(input("Please Enter your PIN: "))
+
+        userdata = [i for i in Bank.data if i['accountNo.'] == accNum and i['pin'] == accPin]
+
+        if userdata == False:
+            print("Sorry No Data Found")
+        else:
+            print("Your following Details are:\n\n")
+            for i in userdata[0]:
+                print(f"{i} : {userdata[0][i]}")
+
 user = Bank()
 
 print("Press 1 for Creating an Account")
@@ -109,3 +122,6 @@ if check == 2:
 
 if check == 3:
     user.withdrawmoney()
+
+if check == 4:
+    user.showdetails()
