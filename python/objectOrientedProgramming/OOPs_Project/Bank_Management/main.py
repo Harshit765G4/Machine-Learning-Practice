@@ -103,6 +103,48 @@ class Bank:
             for i in userdata[0]:
                 print(f"{i} : {userdata[0][i]}")
 
+    def updatedetails(self):
+        accNum = input("Please Enter your Account Number: ")
+        accPin = int(input("Please Enter your PIN: "))
+
+        userdata = [i for i in Bank.data if i['accountNo.'] == accNum and i['pin'] == accPin]
+
+        if userdata == False:
+            print("Sorry No Data Found")
+        else:
+            print("you cannot change your age, account number,balance")
+            print("Fill the details for change or leave it empty for no change.")
+
+            newdata = {
+                "name" : input("Please tell your new name or press enter to skip: "),
+                "email" : input("please enter your new email id or press enter to skip: "),
+                "pin" : input("Enter your 4 Digit new pin or press enter to skip: ")
+            }
+
+            if newdata["name"] == "":
+                newdata["name"] = userdata[0]["name"]
+            if newdata["email"] == "":
+                newdata["email"] = userdata[0]["email"]
+            if newdata["pin"] == "":
+                newdata["pin"] = userdata[0]["pin"]
+
+            newdata['age'] = userdata[0]['age']
+            newdata['balance'] = userdata[0]['balance']
+            newdata['accountNo.'] = userdata[0]['accountNo.']
+
+            if type(newdata['pin']) == str:
+                newdata['pin'] = int(newdata['pin'])
+
+            for i in newdata:
+                if newdata[i] == userdata[0][i]:
+                    continue
+                else:
+                    userdata[0][i] = newdata[i]
+
+            Bank.__update()
+            print("Details Updated Sucessfully.")
+            
+
 user = Bank()
 
 print("Press 1 for Creating an Account")
@@ -125,3 +167,6 @@ if check == 3:
 
 if check == 4:
     user.showdetails()
+
+if check == 5:
+    user.updatedetails()
