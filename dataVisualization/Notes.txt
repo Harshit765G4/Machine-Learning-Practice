@@ -1,0 +1,23 @@
+Data Visualization Can be Done using Two Methods.
+
+
+
+
+- With Code
+1. Matplotlib, Seaborn, Plotly.
+
+2. Very high flexibility(can customize every element.)
+
+3. Can integrate into apps, ML Pipelines.
+
+
+
+
+
+
+- With Tools
+1. Power BI, Tableau, Google Data Studio.
+
+2. Limited to what the tool allow.
+
+3. Very tough to integrate with ML Pipelines.
